@@ -91,7 +91,7 @@ if __name__ == "__main__":
     parser.add_argument('--console_log_level', default="Info", type=str.lower,
                         choices=["debug", "info", "warning", "error", "critical"],
                         help='console messages logging level: None, Info, Debug (default: info)')
-    parser.add_argument('--log_file', default='dictionary-server.log',
+    parser.add_argument('--log_file', default='dictionary-server-en.log',
                         help='logging file (default: dictionary-server.log)')
     parser.add_argument('--log_file_level', default='Info', type=str.lower,
                         choices=["debug", "info", "warning", "error", "critical"],
@@ -108,7 +108,7 @@ if __name__ == "__main__":
     }
 
     # check log_file name validity
-    log_file_name = datetime.datetime.today().strftime('%Y%m%d_%H%M%S_') + args.log_file
+    log_file_name = '/var/log/scrabble/' + datetime.datetime.today().strftime('%Y%m%d_%H%M%S_') + args.log_file
     try:
         with open(log_file_name, 'x') as tempfile:  # OSError if file exists or is invalid
             pass
