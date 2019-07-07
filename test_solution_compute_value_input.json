@@ -1,0 +1,753 @@
+{
+    "GameRecord": {
+        "play_list": [
+            {
+                "PlayItem": {
+                    "tile_list": [
+                        "A",
+                        "I",
+                        "N",
+                        "O",
+                        "H",
+                        "L",
+                        "A"
+                    ],
+                    "solution": {
+                        "Solution": {
+                            "main_word": {
+                                "Word": {
+                                    "text": "INHALA",
+                                    "direction": {
+                                        "Direction": "Accross"
+                                    },
+                                    "origin": {
+                                        "Position": {
+                                            "row": 7,
+                                            "col": 7
+                                        }
+                                    }
+                                }
+                            },
+                            "cross_word_list": [],
+                            "blank_set": [],
+                            "value": 20,
+                            "score": 20
+                        }
+                    }
+                }
+            },
+            {
+                "PlayItem": {
+                    "tile_list": [
+                        "E",
+                        "M",
+                        "N",
+                        "N",
+                        "E",
+                        "A",
+                        "L"
+                    ],
+                    "solution": {
+                        "Solution": {
+                            "main_word": {
+                                "Word": {
+                                    "text": "MELANINE",
+                                    "direction": {
+                                        "Direction": "Down"
+                                    },
+                                    "origin": {
+                                        "Position": {
+                                            "row": 2,
+                                            "col": 7
+                                        }
+                                    }
+                                }
+                            },
+                            "cross_word_list": [],
+                            "blank_set": [],
+                            "value": 60,
+                            "score": 60
+                        }
+                    }
+                }
+            },
+            {
+                "PlayItem": {
+                    "tile_list": [
+                        "W",
+                        "Y",
+                        "R",
+                        "I",
+                        "R",
+                        "S",
+                        "E"
+                    ],
+                    "solution": {
+                        "Solution": {
+                            "main_word": {
+                                "Word": {
+                                    "text": "YAWS",
+                                    "direction": {
+                                        "Direction": "Down"
+                                    },
+                                    "origin": {
+                                        "Position": {
+                                            "row": 6,
+                                            "col": 12
+                                        }
+                                    }
+                                }
+                            },
+                            "cross_word_list": [],
+                            "blank_set": [],
+                            "value": 42,
+                            "score": 42
+                        }
+                    }
+                }
+            },
+            {
+                "PlayItem": {
+                    "tile_list": [
+                        "Q",
+                        "S",
+                        "T",
+                        "R",
+                        "G",
+                        "E",
+                        "M"
+                    ],
+                    "solution": {
+                        "Solution": {
+                            "main_word": {
+                                "Word": {
+                                    "text": "MAGRETS",
+                                    "direction": {
+                                        "Direction": "Down"
+                                    },
+                                    "origin": {
+                                        "Position": {
+                                            "row": 6,
+                                            "col": 10
+                                        }
+                                    }
+                                }
+                            },
+                            "cross_word_list": [],
+                            "blank_set": [],
+                            "value": 18,
+                            "score": 18
+                        }
+                    }
+                }
+            },
+            {
+                "PlayItem": {
+                    "tile_list": [
+                        "V",
+                        "E",
+                        "U",
+                        "T",
+                        "S",
+                        "J",
+                        "T"
+                    ],
+                    "solution": {
+                        "Solution": {
+                            "main_word": {
+                                "Word": {
+                                    "text": "JUSTES",
+                                    "direction": {
+                                        "Direction": "Accross"
+                                    },
+                                    "origin": {
+                                        "Position": {
+                                            "row": 12,
+                                            "col": 8
+                                        }
+                                    }
+                                }
+                            },
+                            "cross_word_list": [],
+                            "blank_set": [],
+                            "value": 42,
+                            "score": 42
+                        }
+                    }
+                }
+            },
+            {
+                "PlayItem": {
+                    "tile_list": [
+                        "O",
+                        "V",
+                        "Z",
+                        "L",
+                        "I",
+                        "F",
+                        "X"
+                    ],
+                    "solution": {
+                        "Solution": {
+                            "main_word": {
+                                "Word": {
+                                    "text": "VOLIEZ",
+                                    "direction": {
+                                        "Direction": "Accross"
+                                    },
+                                    "origin": {
+                                        "Position": {
+                                            "row": 3,
+                                            "col": 3
+                                        }
+                                    }
+                                }
+                            },
+                            "cross_word_list": [],
+                            "blank_set": [],
+                            "value": 36,
+                            "score": 36
+                        }
+                    }
+                }
+            },
+            {
+                "PlayItem": {
+                    "tile_list": [
+                        "U",
+                        "E",
+                        "I",
+                        "B",
+                        " ",
+                        "S",
+                        "U"
+                    ],
+                    "solution": {
+                        "Solution": {
+                            "main_word": {
+                                "Word": {
+                                    "text": "INHALAIS",
+                                    "direction": {
+                                        "Direction": "Accross"
+                                    },
+                                    "origin": {
+                                        "Position": {
+                                            "row": 7,
+                                            "col": 7
+                                        }
+                                    }
+                                }
+                            },
+                            "cross_word_list": [],
+                            "blank_set": [],
+                            "value": 33,
+                            "score": 33
+                        }
+                    }
+                }
+            },
+            {
+                "PlayItem": {
+                    "tile_list": [
+                        "R",
+                        "I",
+                        "R",
+                        "E",
+                        "A",
+                        "O",
+                        "A"
+                    ],
+                    "solution": {
+                        "Solution": {
+                            "main_word": {
+                                "Word": {
+                                    "text": "REVOLIEZ",
+                                    "direction": {
+                                        "Direction": "Accross"
+                                    },
+                                    "origin": {
+                                        "Position": {
+                                            "row": 3,
+                                            "col": 1
+                                        }
+                                    }
+                                }
+                            },
+                            "cross_word_list": [],
+                            "blank_set": [],
+                            "value": 20,
+                            "score": 20
+                        }
+                    }
+                }
+            },
+            {
+                "PlayItem": {
+                    "tile_list": [
+                        "Q",
+                        "R",
+                        "T",
+                        "A",
+                        "C",
+                        "E",
+                        "L"
+                    ],
+                    "solution": {
+                        "Solution": {
+                            "main_word": {
+                                "Word": {
+                                    "text": "LECOQ",
+                                    "direction": {
+                                        "Direction": "Down"
+                                    },
+                                    "origin": {
+                                        "Position": {
+                                            "row": 0,
+                                            "col": 4
+                                        }
+                                    }
+                                }
+                            },
+                            "cross_word_list": [],
+                            "blank_set": [],
+                            "value": 28,
+                            "score": 28
+                        }
+                    }
+                }
+            },
+            {
+                "PlayItem": {
+                    "tile_list": [
+                        "V",
+                        "T",
+                        "F",
+                        "E",
+                        "E",
+                        "M",
+                        "P"
+                    ],
+                    "solution": {
+                        "Solution": {
+                            "main_word": {
+                                "Word": {
+                                    "text": "TEMPLE",
+                                    "direction": {
+                                        "Direction": "Accross"
+                                    },
+                                    "origin": {
+                                        "Position": {
+                                            "row": 0,
+                                            "col": 0
+                                        }
+                                    }
+                                }
+                            },
+                            "cross_word_list": [],
+                            "blank_set": [],
+                            "value": 36,
+                            "score": 36
+                        }
+                    }
+                }
+            },
+            {
+                "PlayItem": {
+                    "tile_list": [
+                        "F",
+                        "X",
+                        "D",
+                        "T",
+                        "P",
+                        "E",
+                        "L"
+                    ],
+                    "solution": {
+                        "Solution": {
+                            "main_word": {
+                                "Word": {
+                                    "text": "TELEX",
+                                    "direction": {
+                                        "Direction": "Down"
+                                    },
+                                    "origin": {
+                                        "Position": {
+                                            "row": 2,
+                                            "col": 2
+                                        }
+                                    }
+                                }
+                            },
+                            "cross_word_list": [],
+                            "blank_set": [],
+                            "value": 48,
+                            "score": 48
+                        }
+                    }
+                }
+            },
+            {
+                "PlayItem": {
+                    "tile_list": [
+                        "U",
+                        "E",
+                        "B",
+                        " ",
+                        "U",
+                        "O",
+                        "D"
+                    ],
+                    "solution": {
+                        "Solution": {
+                            "main_word": {
+                                "Word": {
+                                    "text": "BOUDEURS",
+                                    "direction": {
+                                        "Direction": "Down"
+                                    },
+                                    "origin": {
+                                        "Position": {
+                                            "row": 0,
+                                            "col": 14
+                                        }
+                                    }
+                                }
+                            },
+                            "cross_word_list": [],
+                            "blank_set": [
+                                {
+                                    "BlankTuple": {
+                                        "index": 6,
+                                        "letter": "R"
+                                    }
+                                }
+                            ],
+                            "value": 86,
+                            "score": 86
+                        }
+                    }
+                }
+            },
+            {
+                "PlayItem": {
+                    "tile_list": [
+                        "I",
+                        "R",
+                        "A",
+                        "O",
+                        "A",
+                        " ",
+                        "I"
+                    ],
+                    "solution": {
+                        "Solution": {
+                            "main_word": {
+                                "Word": {
+                                    "text": "RIRE",
+                                    "direction": {
+                                        "Direction": "Down"
+                                    },
+                                    "origin": {
+                                        "Position": {
+                                            "row": 3,
+                                            "col": 1
+                                        }
+                                    }
+                                }
+                            },
+                            "cross_word_list": [
+                                {
+                                    "CrossWord": {
+                                        "word": {
+                                            "Word": {
+                                                "text": "IL",
+                                                "direction": {
+                                                    "Direction": "Accross"
+                                                },
+                                                "origin": {
+                                                    "Position": {
+                                                        "row": 4,
+                                                        "col": 1
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "index_of_main_word_line": 0
+                                    }
+                                },
+                                {
+                                    "CrossWord": {
+                                        "word": {
+                                            "Word": {
+                                                "text": "RE",
+                                                "direction": {
+                                                    "Direction": "Accross"
+                                                },
+                                                "origin": {
+                                                    "Position": {
+                                                        "row": 5,
+                                                        "col": 1
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "index_of_main_word_line": 0
+                                    }
+                                },
+                                {
+                                    "CrossWord": {
+                                        "word": {
+                                            "Word": {
+                                                "text": "EX",
+                                                "direction": {
+                                                    "Direction": "Accross"
+                                                },
+                                                "origin": {
+                                                    "Position": {
+                                                        "row": 6,
+                                                        "col": 1
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "index_of_main_word_line": 0
+                                    }
+                                }
+                            ],
+                            "blank_set": [
+                                {
+                                    "BlankTuple": {
+                                        "index": 3,
+                                        "letter": "E"
+                                    }
+                                }
+                            ],
+                            "value": 22,
+                            "score": 22
+                        }
+                    }
+                }
+            },
+            {
+                "PlayItem": {
+                    "tile_list": [
+                        "R",
+                        "T",
+                        "A",
+                        "R",
+                        "A",
+                        "E",
+                        "C"
+                    ],
+                    "solution": {
+                        "Solution": {
+                            "main_word": {
+                                "Word": {
+                                    "text": "RAZE",
+                                    "direction": {
+                                        "Direction": "Down"
+                                    },
+                                    "origin": {
+                                        "Position": {
+                                            "row": 1,
+                                            "col": 8
+                                        }
+                                    }
+                                }
+                            },
+                            "cross_word_list": [
+                                {
+                                    "CrossWord": {
+                                        "word": {
+                                            "Word": {
+                                                "text": "MA",
+                                                "direction": {
+                                                    "Direction": "Accross"
+                                                },
+                                                "origin": {
+                                                    "Position": {
+                                                        "row": 2,
+                                                        "col": 7
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "index_of_main_word_line": 1
+                                    }
+                                },
+                                {
+                                    "CrossWord": {
+                                        "word": {
+                                            "Word": {
+                                                "text": "LE",
+                                                "direction": {
+                                                    "Direction": "Accross"
+                                                },
+                                                "origin": {
+                                                    "Position": {
+                                                        "row": 4,
+                                                        "col": 7
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "index_of_main_word_line": 1
+                                    }
+                                }
+                            ],
+                            "blank_set": [],
+                            "value": 20,
+                            "score": 20
+                        }
+                    }
+                }
+            },
+            {
+                "PlayItem": {
+                    "tile_list": [
+                        "V",
+                        "F",
+                        "N",
+                        "I",
+                        "N",
+                        "H",
+                        "E"
+                    ],
+                    "solution": {
+                        "Solution": {
+                            "main_word": {
+                                "Word": {
+                                    "text": "EH",
+                                    "direction": {
+                                        "Direction": "Down"
+                                    },
+                                    "origin": {
+                                        "Position": {
+                                            "row": 0,
+                                            "col": 5
+                                        }
+                                    }
+                                }
+                            },
+                            "cross_word_list": [
+                                {
+                                    "CrossWord": {
+                                        "word": {
+                                            "Word": {
+                                                "text": "EH",
+                                                "direction": {
+                                                    "Direction": "Accross"
+                                                },
+                                                "origin": {
+                                                    "Position": {
+                                                        "row": 1,
+                                                        "col": 4
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "index_of_main_word_line": 1
+                                    }
+                                }
+                            ],
+                            "blank_set": [],
+                            "value": 26,
+                            "score": 26
+                        }
+                    }
+                }
+            },
+            {
+                "PlayItem": {
+                    "tile_list": [
+                        "F",
+                        "D",
+                        "P",
+                        "D",
+                        "A",
+                        "U",
+                        "O"
+                    ],
+                    "solution": {
+                        "Solution": {
+                            "main_word": {
+                                "Word": {
+                                    "text": "LUPO",
+                                    "direction": {
+                                        "Direction": "Down"
+                                    },
+                                    "origin": {
+                                        "Position": {
+                                            "row": 3,
+                                            "col": 5
+                                        }
+                                    }
+                                }
+                            },
+                            "cross_word_list": [
+                                {
+                                    "CrossWord": {
+                                        "word": {
+                                            "Word": {
+                                                "text": "QU",
+                                                "direction": {
+                                                    "Direction": "Accross"
+                                                },
+                                                "origin": {
+                                                    "Position": {
+                                                        "row": 4,
+                                                        "col": 4
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "index_of_main_word_line": 1
+                                    }
+                                }
+                            ],
+                            "blank_set": [],
+                            "value": 21,
+                            "score": 21
+                        }
+                    }
+                }
+            },
+            {
+                "PlayItem": {
+                    "tile_list": [
+                        "R",
+                        "N",
+                        "I",
+                        "S",
+                        "G",
+                        "E",
+                        "E"
+                    ],
+                    "solution": {
+                        "Solution": {
+                            "main_word": {
+                                "Word": {
+                                    "text": "RESIGNEE",
+                                    "direction": {
+                                        "Direction": "Accross"
+                                    },
+                                    "origin": {
+                                        "Position": {
+                                            "row": 9,
+                                            "col": 1
+                                        }
+                                    }
+                                }
+                            },
+                            "cross_word_list": [],
+                            "blank_set": [],
+                            "value": 65,
+                            "score": 65
+                        }
+                    }
+                }
+            }
+        ],
+        "game_summary": {}
+    }
+}
