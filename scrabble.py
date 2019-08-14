@@ -2000,6 +2000,8 @@ class Board():
                                    rack: Rack) -> Union[Solution, bool]:
         """Identify the best solution possible with tiles available from the rack"""
 
+        # TODO add a parameter for game level
+
         global dict_object
         assert isinstance(dict_object, Trie) or isinstance(dict_object, DictionaryServer)
         assert isinstance(rack, Rack)
@@ -2186,7 +2188,7 @@ class Game():
                     solution played if any or
         """
 
-        solution = self.board.get_best_solution_for_rack(player_dict_ref['rack'])
+        solution = self.board.get_best_solution_for_rack(player_dict_ref['rack'])  # TODO add game level parameter
         if solution:
             return self._play(solution, player_dict_ref, player_name)
         else:
@@ -2648,6 +2650,8 @@ def play_4_player(player_name: fields.String(required=True),
                   hug_current_interface,
                   response=None) -> str:
     """Play """
+
+    # TODO add a parameter for level of automatic game
 
     # Initialize dictionary depending hug interface being used. Interface is provided by the
     # hug directive current_interface
