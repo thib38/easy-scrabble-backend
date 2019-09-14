@@ -2645,6 +2645,7 @@ def play_4_player(player_name: fields.String(required=True),
                   raw_proposed_play: fields.Nested(ProposedPlaySchema(), required=True),
                   game: fields.Nested(GameSchema(), required=True),
                   lang: fields.String(validate=OneOf(['FR', 'EN'])),
+                  check_against_dictionary: fields.Boolean(required=True),
                   hug_current_interface,
                   response=None) -> str:
     """Play """
@@ -2653,6 +2654,7 @@ def play_4_player(player_name: fields.String(required=True),
     # hug directive current_interface
     global dict_object
 
+    logger.debug("check_against_directory = %s" % check_against_dictionary)  # TODO DEBUG TBREMOVED
     logger.debug("hug interface is %s" % hug_current_interface)
     # logger.debug("RECEIVED game=%s" % str(game))
 
@@ -2752,12 +2754,13 @@ def play_4_player(player_name: fields.String(required=True),
         else:
             raise CellUsedOrCrossWordInvalid(proposed_word)
 
-        # Check for word and crosswords existence in dictionary
-        if not dict_object.this_is_a_valid_word(word_proposed.text):
-            raise WordNotInDictionary(word_proposed.text)
-        for cw in cross_word_list:
-            if not dict_object.this_is_a_valid_word(cw.word.text):
-                raise CrossWordNotInDictionary(cw.word.text)
+        # Check for word and crosswords existence in dictionary if required
+        if check_against_dictionary:
+            if not dict_object.this_is_a_valid_word(word_proposed.text):
+                raise WordNotInDictionary(word_proposed.text)
+            for cw in cross_word_list:
+                if not dict_object.this_is_a_valid_word(cw.word.text):
+                    raise CrossWordNotInDictionary(cw.word.text)
 
     else:  # SKIP or CHANGE
         proposed_play = raw_proposed_play
