@@ -1997,18 +1997,67 @@ class Board():
         return solution_list
 
     def get_best_solution_for_rack(self,
-                                   rack: Rack) -> Union[Solution, bool]:
-        """Identify the best solution possible with tiles available from the rack"""
+                                   rack: Rack,
+                                   difficulty_level: str) -> Union[Solution, bool]:
+        """Identify the best solution possible for a given level of difficulty with tiles available from the rack"""
 
         global dict_object
         assert isinstance(dict_object, Trie) or isinstance(dict_object, DictionaryServer)
         assert isinstance(rack, Rack)
         assert len(rack) != 0
+        assert isinstance(difficulty_level, str)
+        assert difficulty_level in ['1', '2', '3']
 
         solution_list = self.get_sorted_list_of_solutions_for_rack(rack)
 
+        # TODO DEBUG TBREMOVED
+        # debug_list = [(solution.score, solution.main_word.text) for index,  solution in enumerate(solution_list)]
+        # logger.debug("debug_list= %s", debug_list)
+
         if solution_list:
-            return solution_list[-1]
+            if difficulty_level == '3':  # expert mode let's always return the best solution
+                return solution_list[-1]
+
+            # build a list of value that is made of a unique solution for every score (ie if there's
+            # 5 solutions yielding 7 points only one is kept in the list of value - actually the one with the
+            # longer word
+            # A couple of list is built storing respectively the score and the index in solution_list
+            # they are in increasing order of score value as solution_list is already sorted this way
+            value_list, solution_list_index_reference_list, current_index, current_score, current_max_length = \
+                [], [], 0, 0, 0
+            for index, solution in enumerate(solution_list):
+                if not index:
+                    current_index, current_score, current_max_length = \
+                        index, solution.score, len(solution.main_word.text)
+                    continue
+
+                if current_score < solution.score:
+                    value_list.append(current_score)
+                    solution_list_index_reference_list.append(current_index)
+                    current_score = solution.score
+                    current_index = index
+                    current_max_length = len(solution.main_word.text)
+                    continue
+
+                if current_max_length < len(solution.main_word.text):
+                    current_index = index
+            value_list.append(current_score)
+            solution_list_index_reference_list.append(current_index)
+
+            # logger.debug("value_list= %s", value_list)  # TODO DEBUG TBREMOVED
+
+            if difficulty_level == '1':  # beginner mode
+                if value_list[-1] <= 15:
+                    return solution_list[-1]
+                else:
+                    return solution_list[solution_list_index_reference_list[int(len(value_list) / 2)]]
+            elif difficulty_level == '2':  # confirmed player mode
+                if value_list[-1] <= 30:
+                    return solution_list[-1]
+                else:
+                    return solution_list[solution_list_index_reference_list[int(len(value_list) * 6 / 8)]]
+            else:
+                logger.error("difficulty_level value: %s is a non supported option", difficulty_level)
         else:
             return False  # no word found
 
@@ -2177,34 +2226,16 @@ class Game():
                 raise ChangeRackLettersNotAllowed("Can't change letters if rack not full or "
                                                   "less that 7 letters left in bag")
 
-    def play_auto(self, player_dict_ref: Dict[str, str], player_name: Optional[str] = None) -> PlayReturnTuple:
-        """Compute a solution (either a new word of skip or change letters) and play it
-
-        :return: a PlayResultTuple stating
-                    rc  play, skip, change
-                    letters from rack put on the board or None
-                    solution played if any or
-        """
-
-        solution = self.board.get_best_solution_for_rack(player_dict_ref['rack'])
-        if solution:
-            return self._play(solution, player_dict_ref, player_name)
-        else:
-            if len(player_dict_ref['rack']) == 7 and len(self.bag) >= 7:
-                logger.info("No word found for rack= %s - changing tiles" % player_dict_ref['rack'])
-                return PlayReturnTuple(rc="change")
-            else:
-                logger.info("No word found for rack= %s - skipping this play" % player_dict_ref['rack'])
-                player_dict_ref['nb_skip_in_sequence'] += 1
-                return PlayReturnTuple(rc="skip")
-
     def manual_play(self, player_name: str,
                     play_instruction: Tuple[str, Optional[Solution]],
+                    difficulty_level: str,
                     record: bool = False,
                     play_list_filename: Optional[str] = None) -> bool:
         """Play a manual play for player and play auto for next players that are in auto mode """
         assert isinstance(player_name, str)
         assert player_name in self.players_name_list
+        assert isinstance(difficulty_level, str)
+        assert difficulty_level in ['1', '2', '3']
         assert isinstance(record, bool)
         assert not (record and play_list_filename)  # record and play from record are mutually exclusive
 
@@ -2224,7 +2255,7 @@ class Game():
             if i == 0:  # this is a manual play
                 play_return = self.play_manual(play_instruction, player_dict_ref, player)
             else:  # this is an automatic play
-                play_return = self.play_auto(player_dict_ref, player)
+                play_return = self.play_auto(player_dict_ref, difficulty_level, player)
 
             if play_return.rc == "played":
                 if record:
@@ -2284,6 +2315,29 @@ class Game():
             self.game_record.store_game_summary(game_summary)
 
         return True if game_over else False
+
+    def play_auto(self, player_dict_ref: Dict[str, str],
+                  difficulty_level: str,
+                  player_name: Optional[str] = None) -> PlayReturnTuple:
+        """Compute a solution (either a new word of skip or change letters) and play it
+
+        :return: a PlayResultTuple stating
+                    rc  play, skip, change
+                    letters from rack put on the board or None
+                    solution played if any or
+        """
+
+        solution = self.board.get_best_solution_for_rack(player_dict_ref['rack'], difficulty_level)
+        if solution:
+            return self._play(solution, player_dict_ref, player_name)
+        else:
+            if len(player_dict_ref['rack']) == 7 and len(self.bag) >= 7:
+                logger.info("No word found for rack= %s - changing tiles" % player_dict_ref['rack'])
+                return PlayReturnTuple(rc="change")
+            else:
+                logger.info("No word found for rack= %s - skipping this play" % player_dict_ref['rack'])
+                player_dict_ref['nb_skip_in_sequence'] += 1
+                return PlayReturnTuple(rc="skip")
 
     def automatic_play(self, record: bool = False, play_list_filename: Optional[str] = None) -> GameSummary:
         """
@@ -2646,6 +2700,7 @@ def play_4_player(player_name: fields.String(required=True),
                   game: fields.Nested(GameSchema(), required=True),
                   lang: fields.String(validate=OneOf(['FR', 'EN'])),
                   check_against_dictionary: fields.Boolean(required=True),
+                  difficulty_level: fields.String(validate=OneOf(['1', '2', '3'])),
                   hug_current_interface,
                   response=None) -> str:
     """Play """
@@ -2655,6 +2710,7 @@ def play_4_player(player_name: fields.String(required=True),
     global dict_object
 
     logger.debug("check_against_directory = %s" % check_against_dictionary)  # TODO DEBUG TBREMOVED
+    logger.debug("difficulty_level = %s" % difficulty_level)  # TODO DEBUG TBREMOVED
     logger.debug("hug interface is %s" % hug_current_interface)
     # logger.debug("RECEIVED game=%s" % str(game))
 
@@ -2766,7 +2822,7 @@ def play_4_player(player_name: fields.String(required=True),
         proposed_play = raw_proposed_play
 
     # let's play
-    game_over = game.manual_play(player_name, proposed_play)
+    game_over = game.manual_play(player_name, proposed_play, difficulty_level)
 
     return json.dumps({"game_over": game_over,
                        "game": GameSchema().dumps(game)})
