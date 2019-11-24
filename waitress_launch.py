@@ -21,4 +21,5 @@ handler_file = RotatingFileHandler(log_file_name, maxBytes=100000000, backupCoun
 handler_file.setLevel(logging.DEBUG)
 logger.addHandler(handler_file)
 
-serve(scrabble.__hug_wsgi__, listen='127.0.0.1:8000', threads=128)
+# serve(scrabble.__hug_wsgi__, listen='127.0.0.1:8000', threads=128)
+serve(scrabble.__hug_wsgi__, listen='192.168.33.10:8000', threads=128)

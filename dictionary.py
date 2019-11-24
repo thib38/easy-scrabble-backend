@@ -243,7 +243,7 @@ class Trie:
         return word_set
 
     # noinspection PyUnusedLocal
-    @staticmethod
+    @staticmethod  # TODO why is this method static ?
     def _word_for_termination_node(node: Node) -> str:
         """Return word corresponding to the termination node parameter - as a string"""
         assert isinstance(node, Node)
